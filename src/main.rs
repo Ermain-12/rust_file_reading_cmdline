@@ -10,13 +10,27 @@ fn main() {
 
     // User specifies the query type
     let query = &args[1];
-    let file = &args[2];
+    let file_name = &args[2];
 
     println!("Searching for {:?}", query);
-    println!("In file: {:?}", file);
+    println!("In file: {:?}", file_name);
 
-    let contents = fs::read_to_string(file)
+    let contents = fs::read_to_string(file_name)
                         .expect("Error reading this file.");
 
-    println!("With text:\n {:?}", &contents);
+    println!("With text:\n {:?}", contents);
+}
+
+
+fn parse(args: &[String]) -> (&str, &str) {
+    let query = &args[1];
+    let filename = &args[2];
+
+    (query, filename)
+}
+
+#[derive(Debug)]
+struct Config {
+    query: String,
+    filename: String,
 }
