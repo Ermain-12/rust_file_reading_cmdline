@@ -21,12 +21,21 @@ fn main() {
     println!("With text:\n {:?}", contents);
 }
 
-
+#[warn(dead_code)]
 fn parse(args: &[String]) -> (&str, &str) {
     let query = &args[1];
     let filename = &args[2];
 
     (query, filename)
+}
+
+#[warn(dead_code)]
+fn parse_config(args: &[String]) -> Config {
+    
+    let query: String = args[1].clone();
+    let filename: String = args[2].clone();
+
+    Config { query, filename }
 }
 
 #[derive(Debug)]
