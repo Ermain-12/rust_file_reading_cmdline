@@ -1,0 +1,6 @@
+[package]
+name = "minigrep_cmd_line"
+version = "0.1.0"
+authors = ["Ermain <paulermain@gmail.com>"]
+
+[dependencies]
